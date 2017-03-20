@@ -1,5 +1,5 @@
 import random
-from base import Base
+from lib.base import Base
 import copy
 
 class BaseMonster(Base):

@@ -1,23 +1,17 @@
-from player import Player
-from monsters import Spider
+from lib.player import Player
+from lib.monsters import Spider
 import random
 
-monsters = [
-    Spider
-]
 
 class Controller:
 
     def __init__(self):
         self.status = ''
-
-    monsters = [
-        Spider
-    ]
+        self.monsters = [
+            Spider
+        ]
     def start_game(self):
         self.player = Player()
-        self.fight()
-
 
     def fight(self):
         monster = self.create_monster(self.player.level)
@@ -57,6 +51,3 @@ class Controller:
                 possible_monsters.append(monster)
         monster_klass = random.choice(possible_monsters)
         return monster_klass()
-
-game = Controller()
-game.start_game()

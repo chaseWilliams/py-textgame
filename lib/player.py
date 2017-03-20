@@ -1,5 +1,5 @@
-from skills import *
-from base import Base
+from lib.skills import *
+from lib.base import Base
 import copy
 
 class Player(Base):
