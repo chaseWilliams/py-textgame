@@ -1,20 +1,19 @@
-/*
-
-*/
-[
-    {
-        "desc": "It's very quiet...\nThe tunnel intersects with another. Do you go left, straight, or right?",
-        "actions": {
-            "left": ["You walk through the eerie center.", "walk"],
-            "straight": ["You're attacked!", "monster", "You continue walking"],
-            "right": ["You walk through the eerie center.", "walk"]
+{
+    "episodes": [
+        {
+            "desc": "It's very quiet...\nThe tunnel intersects with another. Do you go left, straight, or right?",
+            "actions": {
+                "left": ["You walk through the eerie center.", "walk"],
+                "straight": ["You're attacked!", "monster", "You continue walking"],
+                "right": ["You walk through the eerie center.", "walk"]
+            }
+        },
+        {
+            "desc": "All of the sudden you hear water running, and to your left is an underground lake. Do you drink from it, or keep going?",
+            "actions": {
+                "drink": ["You gained HP.", "walk"],
+                "go": ["You may have saved yourself. Onwards.", "walk"]
+            }
         }
-    },
-    {
-        "desc": "All of the sudden you hear water running, and to your left is an underground lake. Do you drink from it, or keep going?",
-        "actions": {
-            "drink": ["You gained HP.", "walk"],
-            "go": ["You may have saved yourself. Onwards.", "walk"]
-        }
-    }
-]
+    ]
+}
