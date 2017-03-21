@@ -8,6 +8,7 @@ class BaseMonster(Base):
         self.level_spawn = 0
         self.player_death_msg = ''
         self.monster_death_msg = ''
+        self.name = ''
 
     def choose_move(self):
         self.rand_move()
@@ -32,5 +33,6 @@ class Spider(BaseMonster):
         }
         self.curr_stats = copy.copy(self.max_stats)
         self.level_spawn = 0
+        self.name = 'Spider'
         self.player_death_msg = "You were eviscerated by the spider's fangs"
         self.monster_death_msg = "You slayed the spider!"

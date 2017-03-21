@@ -16,8 +16,9 @@ class Controller:
     def fight(self):
         monster = self.create_monster(self.player.level)
         while True:
-            print("player health: {0} \nmonster health: {1}".format(
+            print("player health: {0} \n{1} health: {2}".format(
                 self.player.curr_stats['health'],
+                monster.name,
                 monster.curr_stats['health']
             ))
             player_move = self.player.choose_move()

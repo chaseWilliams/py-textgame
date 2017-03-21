@@ -39,7 +39,7 @@ num_episodes = 2
 for i in range(num_episodes):
     random_episode = random.choice(episodes)
     action_map = view(random_episode)
-    choice = int(input(">"))
+    choice = int(input("> "))
     play_episode(random_episode, choice, action_map)
 
 # ending scene
