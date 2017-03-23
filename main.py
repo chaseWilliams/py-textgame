@@ -1,4 +1,4 @@
-from lib.controller import Controller
+from lib.controller import Controller, PlayerDeath
 import json
 import random
 
@@ -32,11 +32,18 @@ def play_episode(episode, choice, action_map):
         print(scenario[0])
     elif result == 'monster':
         print(scenario[0])
-        game.fight()
-        print(scenario[2])
+        try:
+            monster = game.fight()
+        except PlayerDeath:
+            pass
+        else:
+            print(scenario[2])
 
-num_episodes = 2
+num_episodes = 5
+
 for i in range(num_episodes):
+    if game.player_dead:
+        break
     random_episode = random.choice(episodes)
     action_map = view(random_episode)
     choice = int(input("> "))
@@ -45,4 +52,7 @@ for i in range(num_episodes):
 # ending scene
 end_file = open('txt/end.txt', 'r')
 end_dialogue = list(end_file)
-print(end_dialogue[0])
+if game.player_dead:
+    print(end_dialogue[1])
+else:
+    print(end_dialogue[0])

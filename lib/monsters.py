@@ -9,6 +9,7 @@ class BaseMonster(Base):
         self.player_death_msg = ''
         self.monster_death_msg = ''
         self.name = ''
+        self.exp = 0
 
     def choose_move(self):
         self.rand_move()
@@ -27,7 +28,7 @@ class Spider(BaseMonster):
         BaseMonster.__init__(self)
         self.max_stats = {
             'health': 25,
-            'attack': 5,
+            'attack': 15,
             'defense': 0,
             'mana': 0
         }
@@ -36,3 +37,4 @@ class Spider(BaseMonster):
         self.name = 'Spider'
         self.player_death_msg = "You were eviscerated by the spider's fangs"
         self.monster_death_msg = "You slayed the spider!"
+        self.exp = 10
