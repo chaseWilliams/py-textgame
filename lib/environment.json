@@ -11,8 +11,30 @@
         {
             "desc": "All of the sudden you hear water running, and to your left is an underground lake. Do you drink from it, or keep going?",
             "actions": {
-                "drink": ["You gained HP.", "walk"],
+                "drink": ["You gained HP.", "regain", "Let us keep on going"],
                 "go": ["You may have saved yourself. Onwards.", "walk"]
+            }
+        },
+        {
+            "desc": "It's been a long day so far...\nDo you want to take a break and rest?",
+            "actions": {
+                "stay": ["You're attacked!", "monster", "Exhausted, you decide to take a nap anyway."],
+                "go": ["You may have missed out on a much needed nap", "walk"]
+            }
+        },
+        {
+            "desc": "There's a treasure chest a little ways up. Do you want to open it up?",
+            "actions": {
+                "open": ["You open the chest.\nNothing inside.\nSuddenly, a monster attacks you.", "monster", "Tired, you forge onwards"],
+                "ignore": ["Looks like you just can't ignore danger - a monster attacks you.", "monster", "Phew, it's gone now. Onwards."]
+            }
+        },
+        {
+            "desc": "There's a lone monster up ahead - What do you want to do?",
+            "actions": {
+                "fight": ["You yell at the top of your lungs and engage in combat", "monster", "That wasn't too hard."],
+                "sneak": ["You get around it and find a couple of potions up ahead.", "regain", "Awesome!"],
+                "turn around": ["It sees you and attacks you.", "monster", "No being a coward next time."]
             }
         }
     ]

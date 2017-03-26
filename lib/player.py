@@ -35,13 +35,14 @@ class Player(Base):
         
 
     def choose_move(self):
-        print("What will you do?\nAttack\nNothing")
+        print("What will you do?\nattack\nnothing")
         for skill in self.skills:
             print(skill.name)
         choice = input("> ")
         if choice == 'attack':
-            return self.attack()
-        elif choice == 'Nothing':
+            mods = self.attack()
+            return mods
+        elif choice == 'nothing':
             return {
                 'health': 0,
                 'attack': 0,

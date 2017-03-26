@@ -19,4 +19,4 @@ class StrongAttack(BaseSkill):
         BaseSkill.__init__(self)
         self.effects['mana'] = 2
         self.effects['attack'] = 30
-        self.name = 'Strong Attack'
+        self.name = 'strong attack'

@@ -1,6 +1,5 @@
-num = 0
-while num < 10:
-    num += 1
-    if num is 5:
-        continue
-    print(num)
+from lib.player import Player
+
+player = Player()
+print(player.choose_move())
+print(player.move_modifiers)

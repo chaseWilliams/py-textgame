@@ -38,3 +38,19 @@ class Spider(BaseMonster):
         self.player_death_msg = "You were eviscerated by the spider's fangs"
         self.monster_death_msg = "You slayed the spider!"
         self.exp = 10
+
+class Ghoul(BaseMonster):
+    def __init__(self):
+        BaseMonster.__init__(self)
+        self.max_stats = {
+            'health': 40,
+            'attack': 10,
+            'defense': 3,
+            'mana': 0
+        }
+        self.curr_stats = copy.copy(self.max_stats)
+        self.level_spawn = 0
+        self.name = 'Ghoul'
+        self.player_death_msg = 'The Ghoul ripped out your heart'
+        self.monster_death_msg = 'You vanquished the Ghoul'
+        self.exp = 30

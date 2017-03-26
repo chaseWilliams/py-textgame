@@ -38,6 +38,10 @@ def play_episode(episode, choice, action_map):
             pass
         else:
             print(scenario[2])
+    elif result == 'regain':
+        print(scenario[0])
+        game.regain()
+        print(scenario[2])
 
 num_episodes = 5
 

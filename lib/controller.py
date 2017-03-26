@@ -1,5 +1,5 @@
 from lib.player import Player
-from lib.monsters import Spider
+from lib.monsters import Spider, Ghoul
 import random
 
 class PlayerDeath(Exception):
@@ -10,7 +10,8 @@ class Controller:
     def __init__(self):
         self.status = ''
         self.monsters = [
-            Spider
+            Spider,
+            Ghoul
         ]
         self.player_dead = False
         
@@ -40,6 +41,11 @@ class Controller:
                 
         return monster
 
+    def regain(self):
+        print('Regained HP and Mana!')
+        self.player.curr_stats['health'] = self.player.max_stats['health']
+        self.player.curr_stats['mana'] = self.player.max_stats['mana']
+
     def display_death_message(self, monster):
         print(monster.player_death_msg)
 
@@ -50,7 +56,7 @@ class Controller:
         action_doer.curr_stats['health'] += modifiers['health']
         action_doer.curr_stats['mana'] -= modifiers['mana']
         action_doer.curr_stats['defense'] += modifiers['defense']
-        action_enemy.curr_stats['health'] -= modifiers['attack']
+        action_enemy.curr_stats['health'] -= modifiers['attack'] + action_enemy.curr_stats['defense']
 
     def create_monster(self, level):
         possible_monsters = []
